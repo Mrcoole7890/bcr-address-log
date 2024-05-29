@@ -1,0 +1,41 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Street Number</th>
+            <th scope="col">Street Name</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Zip Code</th>
+            <th scope="col">Notes</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of addresses">
+            <td>{{item.houseNumber}}</td>
+            <td>{{item.street}}</td>
+            <td>{{item.city}}</td>
+            <td>{{item.state}}</td>
+            <td>{{item.zipcode}}</td>
+            <td>{{item.notes}}</td>
+            <td>
+              <button type="button" (click)="remove(item)" class="btn btn-danger btn-sm">
+                Remove
+              </button>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="form-control" [(ngModel)]="houseNumberInp"></td>
+            <td><input class="form-control" [(ngModel)]="streetInp"></td>
+            <td><input class="form-control" [(ngModel)]="cityInp"></td>
+            <td><input class="form-control" [(ngModel)]="stateInp"></td>
+            <td><input class="form-control" [(ngModel)]="zipcodeInp"></td>
+            <td><input class="form-control" [(ngModel)]="notesInp"></td>
+            <td>
+                <button type="button" (click)="add()" class="btn btn-success btn-sm">
+                Add
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
